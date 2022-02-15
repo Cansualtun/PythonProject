@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}
+   HOME PAGE
+{% endblock title %}
+
+{% block content %}
+<div class="jumbotron">
+  <h1 class="display-4"><center>To Do List App<center/></h1>
+  <p class="lead"><center>This is To Do App For your organize your life</center></p>
+  <hr class="my-4">
+
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{% url 'create' %}" role="button"><center>Create New TO-DO</center></a>
+  </p>
+</div>
+<div class = "container" >
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">To Do Name</th>
+      <th scope="col">Is Finished</th>
+      <th scope="col">Date and Time</th>
+      <th scope="col">Update</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for todo in todo_list %}
+    <tr>
+
+      <td>{{todo.title}}</td>
+      <td>{{todo.finished}}</td>
+      <td>{{todo.date}}</td>
+       <td></td>
+      <td></td>
+    </tr>
+{% endfor %}
+
+  </tbody>
+</table>
+<div>
+
+
+
+{% endblock content %}
